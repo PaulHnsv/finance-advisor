@@ -1,0 +1,12 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+*.swp
+
+# Estado real do usuário (NÃO commitar)
+estado-agente/*.md
+!estado-agente/*.template.md
