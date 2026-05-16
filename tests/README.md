@@ -21,7 +21,9 @@ Estes testes são cenários executáveis manualmente em um assistente de IA (Cla
 - `07-visualizacao-investimento.md` — visualização padrão em análise de investimento (Claude)
 - `08-visualizacao-opt-in.md` — opt-in em análises pessoal/empresarial
 - `09-visualizacao-degradacao.md` — degradação em plataformas sem Artifacts/Code Interpreter
+- `10-ralph-autonomo.md` — escrita silenciosa, .bak, revert, resumo final, modo Projects sem regressão
+- `11-compressao-determinista.md` — invalidação D4.1, TTL D4.2, pressão D4.3, limite D4.4
 
 ## Critério geral de release
 
-A v0.2.0 só pode ser tagueada quando os 9 testes passarem.
+A v0.3.0 só pode ser tagueada quando os 11 testes passarem.
