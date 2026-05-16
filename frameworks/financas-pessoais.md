@@ -100,3 +100,15 @@ Em qualquer desses casos, sua análise deve apontar isso na Seção 4 e na Seç�
 - **Recomendação 2:** Aplicar todo excedente na quitação da dívida cara (método avalanche se há mais de uma) — confiança alta.
 - **Recomendação 3:** Reavaliar orçamento para tentar elevar o excedente; eventualmente renegociar a dívida — confiança média.
 - **Recomendação 4:** Após quitação, completar a reserva de emergência até atingir 6 meses antes de retomar investimento de longo prazo — confiança alta.
+
+## Gatilho de visualização (opt-in)
+
+Análises pessoais **não** renderizam gráficos por padrão — o output é principalmente narrativo e tabular. Renderizar conforme `frameworks/visualizacao.md` **apenas** quando o usuário pedir explicitamente. Frases-gatilho reconhecidas:
+
+- "visualize"
+- "mostre o gráfico"
+- "compare graficamente"
+- "gráfico"
+- "diagrama"
+
+Quando o gatilho for acionado, renderizar somente os gráficos cujos pré-requisitos de dados estão satisfeitos. Não inferir o que o usuário "deveria" querer ver — render apenas o que está expresso.

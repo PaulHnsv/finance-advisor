@@ -119,3 +119,15 @@ Soma dos fluxos descontados pelo custo de capital, menos investimento inicial. V
 - Confundir EBITDA com geração de caixa real
 - Ignorar dívida ao avaliar uma empresa
 - Comparar margens entre setores muito diferentes sem ajustar pela natureza do negócio
+
+## Gatilho de visualização (opt-in)
+
+Análises empresariais **não** renderizam gráficos por padrão — o output é principalmente narrativo e tabular. Renderizar conforme `frameworks/visualizacao.md` **apenas** quando o usuário pedir explicitamente. Frases-gatilho reconhecidas:
+
+- "visualize"
+- "mostre o gráfico"
+- "compare graficamente"
+- "gráfico"
+- "diagrama"
+
+Quando o gatilho for acionado, renderizar somente os gráficos cujos pré-requisitos de dados estão satisfeitos. Não inferir o que o usuário "deveria" querer ver — render apenas o que está expresso.
