@@ -18,7 +18,10 @@ Estes testes são cenários executáveis manualmente em um assistente de IA (Cla
 - `04-ralph-loop.md` — estado compacto após múltiplas sessões
 - `05-review-ready.md` — formato de saída revisável por terceiros
 - `06-sinalizacao-desatualizacao.md` — sinalização para informação posterior à data de corte
+- `07-visualizacao-investimento.md` — visualização padrão em análise de investimento (Claude)
+- `08-visualizacao-opt-in.md` — opt-in em análises pessoal/empresarial
+- `09-visualizacao-degradacao.md` — degradação em plataformas sem Artifacts/Code Interpreter
 
 ## Critério geral de release
 
-A v0.1.0 só pode ser tagueada quando os 6 testes passarem.
+A v0.2.0 só pode ser tagueada quando os 9 testes passarem.

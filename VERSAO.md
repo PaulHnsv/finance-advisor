@@ -1,6 +1,6 @@
 # Versão
 
-- **Versão da skill:** 0.1.0
+- **Versão da skill:** 0.2.0
 - **Data de corte do conhecimento embutido:** 2026-05
 - **Última verificação tributária (BR):** 2026-05-14 — ver `frameworks/tributacao/BR.md`
 - **Última verificação tributária (US):** 2026-05-14 — ver `frameworks/tributacao/US.md`
