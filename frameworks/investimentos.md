@@ -123,6 +123,18 @@ Quando o usuário traz a carteira atual, peça apenas:
 
 A análise pode ser feita totalmente em percentuais e ratios. Se o usuário insistir em mandar valores absolutos, aplicar protocolo anti-dados-sensíveis do `AGENT.md`.
 
+## Gatilho de visualização
+
+Análises de investimento devem renderizar gráficos automaticamente conforme `frameworks/visualizacao.md`. Antes de finalizar a saída, percorra este checklist:
+
+- [ ] Seção 3 tem 3+ dimensões com score 1-5? → renderizar **V1 (radar)** dentro da Seção 3
+- [ ] Há dados de alocação (input ou recomendação) com 2+ categorias somando ≈100%? → renderizar **V2 (pizza/donut)** no local apropriado (Seção 2 se input, Seção 6 se output)
+- [ ] Seção 5 compara 3+ opções com risco e retorno qualitativos? → renderizar **V3 (quadrante)** dentro da Seção 5
+
+Quando um pré-requisito não for satisfeito, **não** renderizar aquele gráfico e registrar a razão na Seção 7 (sub-item "Dados ausentes que mudariam a análise" ou "Onde discordo de mim mesmo").
+
+Quando a plataforma corrente não suportar o tipo de gráfico exigido (ver capability matrix em `frameworks/visualizacao.md`), declarar abertamente em vez de fingir.
+
 ## Decisões comuns e como tratá-las
 
 ### "Devo investir tudo de uma vez ou aos poucos?"
