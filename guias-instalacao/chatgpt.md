@@ -28,7 +28,7 @@ Em "Knowledge", adicione os arquivos:
 
 ### 4. Configure as Capabilities
 
-- Mantenha "Code Interpreter" desabilitado (não é necessário)
+- Habilite **"Code Interpreter" / "Advanced Data Analysis"** se quiser visualizações inline (ver "Capacidades de visualização" abaixo). Sem ele, o agente cai em modo só-tabela.
 - "Web Browsing" pode ser útil para verificar atualizações regulatórias, mas pode introduzir alucinação; deixe a critério
 - "DALL-E" não é necessário
 
@@ -66,6 +66,17 @@ Diferente do Claude Projects, o ChatGPT **não permite que o Custom GPT escreva 
 - Habilite "Data controls" → desativar o uso de conversas para treino, se disponível na sua região
 - Não compartilhe o GPT publicamente se ele tem estado preenchido com suas informações
 - A OpenAI pode reter logs conforme política da plataforma; verifique antes de usar para finanças
+
+## Capacidades de visualização
+
+Os gráficos do catálogo `frameworks/visualizacao.md` dependem do **Code Interpreter** (também chamado de "Advanced Data Analysis"). Habilite-o nas configurações do Custom GPT.
+
+Com Code Interpreter ligado:
+
+- V1 (radar), V2 (pizza), V3 (quadrante) renderizam como PNG inline via matplotlib
+- Use a paleta definida no framework
+
+Sem Code Interpreter, o agente deve declarar: "Visualização V_n_ indisponível nesta sessão (Code Interpreter desligado); ver tabela acima." e seguir só com tabelas.
 
 ## Limitações nesta plataforma
 

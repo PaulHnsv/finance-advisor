@@ -69,6 +69,18 @@ Copie cada bloco proposto e cole no arquivo local correspondente, substituindo o
 - Microsoft Copilot empresarial pode ter políticas diferentes do Copilot grátis — verifique
 - Não cole o conteúdo do AGENT.md em assistentes desconhecidos que possam logar e revender prompts
 
+## Capacidades de visualização
+
+O Copilot não tem Artifacts nem Code Interpreter para renderização. Resultado:
+
+| Gráfico | Suporte no Copilot |
+|---|---|
+| V1 (radar) | **Indisponível** — agente declara: "Visualização V1 indisponível nesta plataforma; ver tabela acima." |
+| V2 (pizza) | **Mermaid `pie`** — funciona em renderizadores compatíveis (GitHub, alguns clients) |
+| V3 (quadrante) | **Mermaid `quadrantChart`** — idem |
+
+Em ambientes onde o cliente do usuário não renderiza Mermaid, o bloco aparece como texto bruto. Isso é aceito: o conteúdo da análise (tabelas + texto) já é completo.
+
 ## Limitações nesta plataforma
 
 - Sessão não persiste entre conversas — você precisa colar AGENT.md a cada vez

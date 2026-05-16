@@ -51,7 +51,12 @@ Ao fim de cada sessão relevante, o agente vai **propor** uma reescrita dos arqu
 - O Project é privado à sua conta. Não compartilhe o link do Project com terceiros se ele contiver detalhes sensíveis do seu estado
 - Antes de excluir o Project, exporte os arquivos de estado se quiser preservar a memória
 
+## Capacidades de visualização
+
+O Claude Projects oferece **Artifacts**, que renderizam React + Recharts inline. Os três gráficos do catálogo de `frameworks/visualizacao.md` (V1 radar, V2 pizza, V3 quadrante) funcionam todos. Use Artifacts independentes ou um único Artifact agrupando múltiplos gráficos da mesma análise.
+
 ## Limitações nesta plataforma
 
 - O Claude pode hesitar em executar escrita automática em alguns ambientes. Se ele apenas mostrar o conteúdo proposto, copie e salve manualmente
 - O tamanho total dos arquivos do Project tem limite — o ralph-loop é essencial para manter os arquivos pequenos
+- Artifacts têm limite de tamanho (kilobytes); para análises com muitos gráficos, dividir em Artifacts separados
