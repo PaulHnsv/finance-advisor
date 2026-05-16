@@ -4,6 +4,26 @@ Todos os registros seguem [Keep a Changelog](https://keepachangelog.com/en/1.1.0
 
 ## [Unreleased]
 
+## [0.3.0] — 2026-05-15
+
+### Added
+- Framework `frameworks/ralph-loop.md` — ralph-loop autônomo silencioso para Claude Code/Cowork
+- Framework `frameworks/compressao-estado.md` — regras determinísticas D4.1-D4.4 (invalidação, TTL, pressão, limite 2 KB)
+- Bloco `## Lições aprendidas (arquivado)` em todos os templates de `estado-agente/`
+- Comandos de revert: `reverta` e `reverta <arquivo>` (modo autônomo)
+- Test cases 10 (ralph-loop autônomo) e 11 (compressão determinística)
+
+### Changed
+- `AGENT.md`: protocolo de persistência referencia os dois novos frameworks; seção antiga de fim de sessão substituída
+- `guias-instalacao/claude.md`: documenta modo autônomo Cowork/Code com `.bak` e revert
+- `guias-instalacao/chatgpt.md` + `copilot.md`: explicitam modo manual
+- Templates `teses-ativas` e `decisoes`: seção "Lições aprendidas" renomeada para padronizar com novos templates `perfil` e `situacao-relativa`
+
+### Behavior change (modo autônomo)
+- No Claude Code/Cowork, mudanças de estado são escritas silenciosamente durante a sessão
+- Resumo único de mudanças no encerramento da sessão
+- Backup automático (`.bak`) por arquivo, sobrescrito a cada nova escrita
+
 ## [0.2.0] — 2026-05-15
 
 ### Added
