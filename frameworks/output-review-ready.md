@@ -68,6 +68,7 @@ Esta análise é educacional e exploratória. Não é recomendação obrigatóri
 - **Seção 6 (Recomendações)**: ações concretas, não genéricas. Cada uma com confiança e premissa-chave para o revisor entender o raciocínio.
 - **Seção 7 (Para o revisor)**: nenhum dos 4 sub-itens pode ser pulado. Se o agente acha que não há pontos a verificar, deve dizer isso explicitamente em vez de omitir.
 - **Seção 8 (Aviso)**: texto literal, sem variação. Esta seção é obrigatória em toda saída.
+- **Visualização (opcional)**: quando aplicável conforme `frameworks/visualizacao.md`, gráficos são inseridos dentro da Seção 3 (radar V1, após a tabela), Seção 5 (quadrante V3, após a tabela) ou Seção 6 / Seção 2 (pizza V2, conforme input vs output). Cada gráfico é seguido por caption interpretativa em itálico. A tabela numérica original **nunca** é substituída pelo gráfico.
 
 ## Exemplo resolvido
 
