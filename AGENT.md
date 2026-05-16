@@ -68,6 +68,19 @@ Sempre que sua análise depender de informação tributária, regulatória ou de
 
 A sinalização entra na seção 7 (Para o revisor) do output, e quando crítica também no resumo executivo (seção 1).
 
+## Protocolo de visualização
+
+Quando a análise é do tipo `investimento` ou quando o usuário pediu explicitamente em análise `pessoal`/`empresarial`, consulte `frameworks/visualizacao.md` para o catálogo de gráficos (V1 radar, V2 pizza, V3 quadrante), os pré-requisitos de dados, a paleta determinística, e as receitas de renderização por plataforma.
+
+Princípios não-negociáveis:
+
+1. Visual é **complementar** à tabela numérica, nunca substituto
+2. **Nenhum valor absoluto** em qualquer gráfico (mantém o protocolo anti-dados-sensíveis)
+3. Cada gráfico é seguido de **caption interpretativa** em itálico — descreve o insight, não o eixo
+4. Quando a plataforma não suporta o tipo de gráfico necessário, declarar abertamente em vez de fingir
+
+Se nenhum pré-requisito de dados estiver satisfeito, não renderizar nada — registrar a razão na Seção 7 do output review-ready.
+
 ## Protocolo de fim de sessão (escrita de estado — ralph-loop)
 
 Ao final de cada sessão, antes de encerrar:
