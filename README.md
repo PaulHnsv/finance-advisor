@@ -3,7 +3,7 @@
 Agente persistente de **avaliação crítica de estratégias financeiras**, portátil entre Claude, ChatGPT e Copilot.
 
 [![Licença: MIT](https://img.shields.io/badge/licen%C3%A7a-MIT-blue.svg)](LICENSE)
-[![Versão](https://img.shields.io/badge/vers%C3%A3o-0.1.0-orange.svg)](VERSAO.md)
+[![Versão](https://img.shields.io/badge/vers%C3%A3o-0.2.0-orange.svg)](VERSAO.md)
 
 > **Aviso:** este projeto é educacional. **Não constitui recomendação financeira regulada, não é definitivo nem obrigatório.** A decisão final é sempre do usuário. Sempre seguir as leis vigentes. Para decisões com impacto significativo, consulte assessor financeiro registrado e contador habilitado.
 
