@@ -43,7 +43,12 @@ Em todas as sessões posteriores, o Claude lê automaticamente os arquivos do Pr
 
 ### 6. Ralph-loop (atualização do estado)
 
-Ao fim de cada sessão relevante, o agente vai **propor** uma reescrita dos arquivos em `estado-agente/`. Revise o conteúdo proposto e aprove. No Claude, você pode pedir explicitamente: "atualize os arquivos de estado agora".
+O comportamento depende do modo (veja seções abaixo):
+
+- Em **Claude Cowork ou Code** (modo autônomo): o agente escreve o estado silenciosamente durante a sessão; ao final emite um resumo único. Sem ação necessária da sua parte.
+- Em **Claude Projects via chat web** (modo manual): o agente vai **propor** uma reescrita dos arquivos em `estado-agente/` ao fim da sessão. Revise e aprove. Você pode pedir explicitamente: "atualize os arquivos de estado agora".
+
+Detalhes nas seções "Modo autônomo (Cowork / Code)" e "Modo Projects" mais abaixo.
 
 ## Considerações de privacidade
 

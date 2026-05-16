@@ -65,7 +65,8 @@ Para cada write em `estado-agente/<arquivo>.md`:
 1. **Backup:** copiar conteúdo atual para `estado-agente/<arquivo>.md.bak` (sobrescreve `.bak` anterior — 1 nível de revert)
 2. **Write:** aplicar a mudança
 3. **Valida:** ler o arquivo de volta e confirmar que tem as seções obrigatórias do template (cabeçalho, blocos "ativos" e "Lições aprendidas")
-4. **Falha:** se a validação falhar, restaurar silentemente do `.bak` e logar internamente. Não emitir mensagem no chat (a falha é um bug do agente, não do usuário).
+4. **Falha de validação:** se a validação falhar (markdown corrompido, seção mandatória ausente), restaurar silentemente do `.bak` e logar internamente. Não emitir mensagem no chat (a falha é um bug do agente, não do usuário).
+5. **Falha de filesystem:** se o write falhar por motivo de filesystem (permissão negada, arquivo bloqueado, worktree read-only), declarar no chat: `Não consegui salvar <arquivo>.md — verifique permissões do diretório.` e seguir a sessão sem persistir aquela mudança.
 
 ### Comandos de revert do usuário
 
@@ -75,6 +76,8 @@ Para cada write em `estado-agente/<arquivo>.md`:
 | `reverta <arquivo>` | Restaura só o arquivo nomeado. Extensão `.md` é inferida automaticamente (ex: `reverta perfil` → `estado-agente/perfil.md`) |
 
 Após qualquer revert, emitir confirmação **curta** no chat: `Restaurei: <lista de arquivos>`. Este é o único caso de quebra de silêncio mid-session.
+
+O revert lê o `.bak` mas **não o deleta**. O `.bak` é sobrescrito apenas por uma nova escrita subsequente. Isso permite múltiplos reverts consecutivos do mesmo backup.
 
 Se não houver `.bak` mais recente que o início da sessão atual, declarar: "Sem backup desta sessão para reverter."
 
