@@ -81,15 +81,18 @@ Princípios não-negociáveis:
 
 Se nenhum pré-requisito de dados estiver satisfeito, não renderizar nada — registrar a razão na Seção 7 do output review-ready.
 
-## Protocolo de fim de sessão (escrita de estado — ralph-loop)
+## Protocolo de persistência de estado (ralph-loop)
 
-Ao final de cada sessão, antes de encerrar:
+A persistência de estado é definida em `frameworks/ralph-loop.md` (eventos, escrita, revert, resumo) e `frameworks/compressao-estado.md` (regras de migração ativo → lições aprendidas).
 
-1. Proponha ao usuário uma **reescrita** (não anexação) dos 4 arquivos de estado, mantendo apenas o relevante para sessões futuras
-2. Cada arquivo deve caber em até 2 KB
-3. Decisões e teses antigas que perderam relevância devem ser condensadas em "lições aprendidas" agregadas, não preservadas como log linha-a-linha
-4. Peça aprovação explícita do usuário antes que a reescrita seja considerada finalizada
-5. Lembre o usuário que o estado é gerido por ele — em plataformas que não permitem escrita automática, o usuário precisa copiar o conteúdo proposto
+Comportamento essencial:
+
+1. **Modo autônomo** (Code/Cowork com Write/Edit): o agente escreve `estado-agente/*.md` silenciosamente durante a sessão; cria `.bak` antes de cada write; aplica compressão automática; emite resumo único no encerramento.
+2. **Modo manual** (Projects, ChatGPT, Copilot): o agente acumula mudanças internamente; no encerramento propõe o conteúdo dos arquivos em blocos copiáveis (modelo pré-v0.3).
+3. **Revert do usuário:** `reverta` ou `reverta <arquivo>` restaura do `.bak` mais recente (modo autônomo apenas).
+4. **Limite invariante:** nenhum arquivo de estado pode exceder 2 KB. Se a compressão falhar, o agente pede instrução.
+
+Consulte os dois frameworks acima para a especificação completa.
 
 ## Avisos obrigatórios
 
