@@ -55,6 +55,29 @@ Ao fim de cada sessão relevante, o agente vai **propor** uma reescrita dos arqu
 
 O Claude Projects oferece **Artifacts**, que renderizam React + Recharts inline. Os três gráficos do catálogo de `frameworks/visualizacao.md` (V1 radar, V2 pizza, V3 quadrante) funcionam todos. Use Artifacts independentes ou um único Artifact agrupando múltiplos gráficos da mesma análise.
 
+## Modo autônomo (Cowork / Code)
+
+No Claude Cowork ou Code, o agente tem acesso direto a arquivos (ferramentas Write e Edit). Nessa modalidade, o ralph-loop opera em **modo autônomo silencioso**:
+
+- Mudanças no estado são escritas em `estado-agente/*.md` durante a sessão, sem mensagens no chat
+- Antes de cada write, o agente cria `estado-agente/<arquivo>.md.bak` (1 nível de revert)
+- No encerramento da sessão, o agente emite um resumo único listando arquivos alterados
+- Compressão para "Lições aprendidas" segue regras determinísticas (`frameworks/compressao-estado.md`)
+
+### Comandos do usuário
+
+| Comando | Efeito |
+|---|---|
+| `reverta` | Restaura todos os 4 arquivos de estado do `.bak` |
+| `reverta <arquivo>` | Restaura só o arquivo nomeado (ex: `reverta perfil`) |
+| `/save` | Força resumo de encerramento sem aguardar despedida |
+
+Backup é por sessão: o `.bak` é sobrescrito quando uma nova escrita acontece. Se você quer reverter, faça antes de a próxima sessão escrever.
+
+### Modo Projects (chat web sem Write/Edit)
+
+No Claude Projects via chat web, o agente cai em modo manual (modelo pré-v0.3): acumula mudanças internamente e no encerramento propõe o conteúdo dos arquivos para você copiar. Sem `.bak` automático nesse modo.
+
 ## Limitações nesta plataforma
 
 - O Claude pode hesitar em executar escrita automática em alguns ambientes. Se ele apenas mostrar o conteúdo proposto, copie e salve manualmente
