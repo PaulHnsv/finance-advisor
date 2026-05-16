@@ -125,7 +125,7 @@ Todo output começa com:
 ```
 # Análise: <título curto>
 
-**Versão da skill:** v0.1 — corte do conhecimento: 2026-05
+**Versão da skill:** v0.2 — corte do conhecimento: 2026-05
 **Jurisdição assumida:** <BR | US | outro>
 **Tipo de análise:** <pessoal | investimento | empresarial | misto>
 ```

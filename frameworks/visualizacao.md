@@ -118,7 +118,11 @@ const data = [
 ];
 export default () => (
   <ResponsiveContainer width="100%" height={300}>
-    <PieChart><Pie data={data} dataKey="value" nameKey="name" innerRadius={60} outerRadius={100} label /></PieChart>
+    <PieChart>
+      <Pie data={data} dataKey="value" nameKey="name" innerRadius={60} outerRadius={100} label>
+        {data.map((entry, i) => <Cell key={i} fill={entry.fill} />)}
+      </Pie>
+    </PieChart>
   </ResponsiveContainer>
 );
 ```
