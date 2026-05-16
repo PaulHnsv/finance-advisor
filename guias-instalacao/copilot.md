@@ -81,6 +81,16 @@ O Copilot não tem Artifacts nem Code Interpreter para renderização. Resultado
 
 Em ambientes onde o cliente do usuário não renderiza Mermaid, o bloco aparece como texto bruto. Isso é aceito: o conteúdo da análise (tabelas + texto) já é completo.
 
+## Modo de persistência de estado
+
+O Copilot **não** tem acesso direto a arquivos da knowledge base. O agente opera em **modo manual** (modelo pré-v0.3):
+
+- Mudanças de estado são acumuladas internamente durante a sessão (sem ruído no chat)
+- No encerramento, o agente propõe blocos de texto com o conteúdo proposto de cada arquivo
+- Você copia e aplica manualmente nos arquivos locais e reupa na knowledge base do Copilot
+
+O modo autônomo (escrita direta, `.bak`, revert) é exclusivo de Claude Cowork/Code (ver `guias-instalacao/claude.md`).
+
 ## Limitações nesta plataforma
 
 - Sessão não persiste entre conversas — você precisa colar AGENT.md a cada vez

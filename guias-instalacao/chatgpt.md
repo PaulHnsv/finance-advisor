@@ -78,6 +78,16 @@ Com Code Interpreter ligado:
 
 Sem Code Interpreter, o agente deve declarar: "Visualização V_n_ indisponível nesta sessão (Code Interpreter desligado); ver tabela acima." e seguir só com tabelas.
 
+## Modo de persistência de estado
+
+O ChatGPT Custom GPT **não** tem acesso direto a arquivos da knowledge base. O agente opera em **modo manual** (modelo pré-v0.3):
+
+- Mudanças de estado são acumuladas internamente durante a sessão (sem ruído no chat)
+- No encerramento, o agente propõe blocos de texto com o conteúdo proposto de cada arquivo
+- Você copia e aplica manualmente nos arquivos locais e reupa na knowledge base do Custom GPT
+
+O modo autônomo (escrita direta, `.bak`, revert) é exclusivo de Claude Cowork/Code (ver `guias-instalacao/claude.md`).
+
 ## Limitações nesta plataforma
 
 - Ralph-loop manual (descrito acima)
