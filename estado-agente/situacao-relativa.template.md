@@ -31,5 +31,9 @@ Registre tudo em percentuais, faixas ou ratios. Nunca registre montantes em moed
 - Saúde: <tem | não tem>
 - Outros relevantes: <descrição>
 
+## Lições aprendidas (arquivado)
+
+<Itens movidos do bloco ativo conforme `frameworks/compressao-estado.md`. Vazio na primeira sessão.>
+
 ---
 Última revisão: YYYY-MM-DD

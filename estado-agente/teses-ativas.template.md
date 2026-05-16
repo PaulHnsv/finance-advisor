@@ -20,9 +20,9 @@ Lista de teses em acompanhamento. Limite: 10 teses ativas. Excedente vai para "l
 
 <!-- Continue até T-10 conforme necessário. -->
 
-## Lições aprendidas agregadas
+## Lições aprendidas (arquivado)
 
-<Padrões observados em teses passadas que foram invalidadas. Mantenha apenas o aprendizado, sem reproduzir o log detalhado.>
+<Itens movidos do bloco ativo conforme `frameworks/compressao-estado.md`. Padrões observados em teses passadas que foram invalidadas ou expiradas. Mantenha apenas o aprendizado, sem reproduzir o log detalhado.>
 
 ---
 Última revisão: YYYY-MM-DD

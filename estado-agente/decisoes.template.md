@@ -12,9 +12,9 @@
 
 <!-- Mantenha no máximo 5 decisões recentes. Antigas devem ser condensadas em "lições aprendidas". -->
 
-## Lições aprendidas (agregadas)
+## Lições aprendidas (arquivado)
 
-<Padrões observados ao longo do tempo nas decisões antigas. Mantenha o aprendizado essencial, não o histórico linha-a-linha.>
+<Itens movidos do bloco ativo conforme `frameworks/compressao-estado.md`. Padrões observados ao longo do tempo nas decisões antigas. Mantenha o aprendizado essencial, não o histórico linha-a-linha.>
 
 ---
 Última revisão: YYYY-MM-DD

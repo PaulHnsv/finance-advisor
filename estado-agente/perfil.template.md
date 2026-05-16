@@ -15,5 +15,9 @@ Preencha apenas com categorias e faixas. Nunca registre dados de identificação
 
 <Eventuais divergências entre tolerância declarada e respostas de calibração; preferências pontuais que o agente deve lembrar.>
 
+## Lições aprendidas (arquivado)
+
+<Itens movidos do bloco ativo conforme `frameworks/compressao-estado.md`. Vazio na primeira sessão.>
+
 ---
 Última revisão: YYYY-MM-DD
