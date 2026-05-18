@@ -78,6 +78,36 @@ Com Code Interpreter ligado:
 
 Sem Code Interpreter, o agente deve declarar: "Visualização V_n_ indisponível nesta sessão (Code Interpreter desligado); ver tabela acima." e seguir só com tabelas.
 
+## Atualização (já está instalado, quero subir de versão)
+
+### Antes de atualizar
+
+1. **Cheque a versão atual** — pergunte ao Custom GPT "qual sua versão da skill" (ele lê `VERSAO.md` da knowledge base)
+2. **Cheque a versão nova** em [github.com/PaulHnsv/finance-advisor/releases](https://github.com/PaulHnsv/finance-advisor/releases)
+3. **Leia o CHANGELOG** entre as duas versões — atenção a "Behavior change"
+4. **Faça backup dos seus arquivos preenchidos em `estado-agente/`** (não os templates) — baixe da knowledge base antes de qualquer mexida
+
+### Passos
+
+1. Baixe os arquivos da versão nova do repo
+2. No editor do Custom GPT, abra a knowledge base
+3. **Remova:** `VERSAO.md`, todos os arquivos de `frameworks/` (incluindo `tributacao/`)
+4. **Upload:** os mesmos arquivos da versão nova
+5. **Atualize as Instructions** com o novo conteúdo de `AGENT.md`
+6. **NÃO mexa** nos arquivos de `estado-agente/` já preenchidos (perfil.md, situacao-relativa.md, teses-ativas.md, decisoes.md) — eles têm seu estado real
+7. Salve o Custom GPT
+
+### Migração de templates (v0.1.x ou v0.2.x → v0.3.x)
+
+A v0.3.0 adicionou o bloco `## Lições aprendidas (arquivado)` em todos os templates de estado. Se seus arquivos preenchidos vêm de v0.1 ou v0.2:
+
+- **Recomendado:** baixe cada `estado-agente/*.md` da knowledge, adicione manualmente o bloco antes do divisor `---` final, e re-upe.
+- **Alternativa:** abra uma sessão pós-update e peça "atualize o formato dos meus arquivos de estado para v0.3, adicionando o bloco de Lições aprendidas". O GPT produz o conteúdo proposto — você copia para os arquivos locais e re-upa.
+
+### Verificar pós-update
+
+Pergunte: "qual sua versão da skill?" — deve retornar a versão nova.
+
 ## Modo de persistência de estado
 
 O ChatGPT Custom GPT **não** tem acesso direto a arquivos da knowledge base. O agente opera em **modo manual** (modelo pré-v0.3):

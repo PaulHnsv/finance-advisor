@@ -81,6 +81,57 @@ O Copilot não tem Artifacts nem Code Interpreter para renderização. Resultado
 
 Em ambientes onde o cliente do usuário não renderiza Mermaid, o bloco aparece como texto bruto. Isso é aceito: o conteúdo da análise (tabelas + texto) já é completo.
 
+## Atualização (já está instalado, quero subir de versão)
+
+Como o Copilot usa um "kit local" de arquivos colados a cada sessão, a atualização é só atualizar os arquivos locais. Sua próxima sessão automaticamente usa a versão nova quando você colar `AGENT.md` no prompt inicial.
+
+### Antes de atualizar
+
+1. **Cheque a versão atual** — no início de uma sessão antiga (com kit antigo), pergunte "qual sua versão da skill" (ele lê seu `VERSAO.md` colado)
+2. **Cheque a versão nova** em [github.com/PaulHnsv/finance-advisor/releases](https://github.com/PaulHnsv/finance-advisor/releases)
+3. **Leia o CHANGELOG** entre as duas versões — atenção a "Behavior change"
+4. **Faça backup dos seus `estado-agente/*.md` preenchidos** — copie para uma pasta paralela antes de qualquer mexida
+
+### Passos
+
+**Opção A — você clonou o repo:**
+
+```bash
+cd <pasta do kit>
+git stash               # guarda mudanças locais não-commitadas (se houver)
+git pull origin main
+git stash pop           # restaura suas mudanças locais
+```
+
+Se você manteve os arquivos preenchidos em `estado-agente/` sem commit (o que é o esperado — `.gitignore` ignora eles), o `git pull` não toca neles.
+
+**Opção B — você baixou ZIP:**
+
+1. Baixe o ZIP da versão nova do repo
+2. Extraia em uma pasta nova
+3. **Copie seus `estado-agente/*.md` preenchidos** da pasta antiga para a nova
+4. Use a pasta nova como kit a partir da próxima sessão
+
+### Migração de templates (v0.1.x ou v0.2.x → v0.3.x)
+
+A v0.3.0 adicionou o bloco `## Lições aprendidas (arquivado)` em todos os templates. Para seus arquivos preenchidos antigos:
+
+- Edite cada `estado-agente/*.md` adicionando o bloco antes do divisor `---` final:
+  ```markdown
+  ## Lições aprendidas (arquivado)
+
+  <vazio até o agente arquivar algo>
+
+  ---
+  Última revisão: ...
+  ```
+
+Sem essa migração, as regras de compressão da v0.3 (`frameworks/compressao-estado.md`) ainda funcionam, mas o agente vai precisar criar o bloco na primeira sessão pós-update — você verá isso no resumo final.
+
+### Verificar pós-update
+
+Na próxima sessão (com kit novo colado no prompt inicial), pergunte: "qual sua versão da skill?" — deve retornar a versão nova.
+
 ## Modo de persistência de estado
 
 O Copilot **não** tem acesso direto a arquivos da knowledge base. O agente opera em **modo manual** (modelo pré-v0.3):
